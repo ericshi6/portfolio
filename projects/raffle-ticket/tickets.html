@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Raffle Tickets</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style media="screen">
+  body {
+    font-family: 'Verdana','Arial','Helvetica', sans-serif;
+    color: #000000;
+    background-color: powderblue;
+  }
+  table {
+    border: none;
+    border-spacing: 0px;
+  }
+  a,
+  a:visited,
+  a:active {
+    color: #000080;
+  }
+  .plus-button, .minus-button{
+    font-size:1.8em;
+    color:red;
+    opacity:0.7;
+  }
+  .plus-button:hover, .minus-button:hover{
+    opacity: 1;
+    cursor: pointer;
+  }
+  #paymentForm {
+    background-color: #FFFFF1;
+  }
+  #responseField {
+    background-color: #FFFFF1;
+  }
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+
+	<div class="container">
+		<h1 class="mt-4 text-center">Raffle Tickets Payment Form</h1>
+		<p class="bg-info font-weight-bold text-white">Direct POST a Payment to USAePay Gateway </p>
+
+		<form id="paymentForm" autocomplete="off">
+        	<h4 class= "text-info">Please enter the amount of ticket bundles you wish to purchase:</h4>
+      	<div class="container">
+		<table>
+			<tr>
+				<td colspan="2">
+			</tr>
+				<div class="ticketForm">
+					<tr>
+						<td><span>1 ticket for $5:</span></td>
+						<td>
+							<input id="1ticket" name="1 for $5" type="text" value="" min="0"  class="numTickets">
+							<i class="fa fa-plus-circle plus-button" id="1ticketup"></i>
+							<i class="fa fa-minus-circle minus-button" id="1ticketdown"></i>
+						</td>
+					</tr>
+					<tr>
+						<td><span>5 tickets for $20:</span></td>
+						<td>                    
+							<input id="5ticket" name="5 for $20" type="text" value="" min="0" class="numTickets">
+							<i class="fa fa-plus-circle plus-button" id="5ticketup"></i>
+							<i class="fa fa-minus-circle minus-button" id="5ticketdown"></i>
+
+						</td>
+					</tr>
+					<tr>
+						<td><span>15 tickets for $50:</span></td>
+						<td>
+							<input id="15ticket" name="15 for $50" type="text" value="" min="0"  class="numTickets">
+							<i class="fa fa-plus-circle plus-button"  id="15ticketup"></i>
+							<i class="fa fa-minus-circle minus-button" id="15ticketdown"></i>
+
+						</td>
+					</tr>
+					<tr>
+						<td><span>25 tickets for $80:</span></td>
+						<td>                    
+							<input id="25ticket" name="25 for $80" type="text" value="" min="0"  class="numTickets">
+							<i class="fa fa-plus-circle plus-button" id="25ticketup"></i>
+							<i class="fa fa-minus-circle minus-button" id="25ticketdown"></i>
+
+						</td>
+					</tr>
+					<tr>
+						<td><span>35 tickets for $100:</span></td>
+						<td>
+							<input id="35ticket" name="35 for $100" type="text" value="" min="0"  class="numTickets">
+							<i class="fa fa-plus-circle plus-button" id="35ticketup"></i>
+							<i class="fa fa-minus-circle minus-button" id="35ticketdown"></i>
+
+
+						</td>
+					</tr>
+				</div>
+
+					<tr>
+					<td colspan="2">
+					<hr>
+					<h4>Order Summary:</h4></td>
+				</tr>
+				<tr>
+					<td><span>Order Amount:</span></td>
+					<td>                    
+						<input id="amount" name="amount" class="displayonly" type="text" maxlength="" readonly="readonly" placeholder="Order Amount" value="[Amount]">
+					</td>
+				</tr>
+				<tr>
+					<td><span>Description: </span></td>
+					<td>
+					<input id="UMdescription" name="UMdescription" class="displayonly" type="text" maxlength=""  readonly="readonly" placeholder="Description" value="[Description]">
+				</td>
+				<tr>
+        			<td class="text-right">Card Number: </td>
+        			<td><input type="text" id="cardNumber" value="4000100011112224"><a href="https://help.usaepay.info/developer/reference/testcards/" target="_blank"> *See Test Cards</a></td>
+        		</tr>
+        		<tr>
+        			<td class="text-right">Expiration Date: </td>
+        			<td><input type="text" id="expirationDate" value="1122"><br></td>
+        		</tr>
+        		<tr>
+        			<td class="text-right">CVC: </td>
+        			<td><input type="text" id="cvc" value="111"></td>
+        		</tr>
+				</tr>
+		</table>
+		<br>
+			<div class="text-center">
+				<button class="btn btn-success" style="border-radius:15%;" id="paymentButton">Pay Here</button>	
+			</div>
+	</div>
+	<br>
+      	</form>
+
+      	<hr>
+      	<div id="pleaseWait" style="display:none" ></div> 
+      		<p>Payment Response will appear below:</p>
+      	</div>
+		<div id="responseField" class="text-center"></div>
+	</div>
+
+	<script src="tickets.js"></script>
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="crossorigin="anonymous"></script>
+
+
+</body>
+</html>

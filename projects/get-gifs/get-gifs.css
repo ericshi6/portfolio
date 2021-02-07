@@ -1,0 +1,149 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+h1{
+    margin: 50px;
+    color: blanchedalmond;
+    font-weight: 200;
+}
+main{
+    background-image: url('https://developers.giphy.com/branch/master/static/api-c99e353f761d318322c853c03ebcf21b.gif');
+    margin-bottom: 20px;
+}
+main span {
+    color: blanchedalmond;
+
+}
+
+body{
+  background: #f2f2f2;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.search  {
+  position: relative;
+  display: flex;
+  margin: auto;
+
+  max-width: 800px;
+
+}
+#input {
+    height: 36px;
+    border: 2px solid #00B4CC;
+    width: 100%;
+}
+.searchTerm {
+  width: 80%;
+  border-right: none;
+  padding: 5px;
+  height: 20px;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+  margin-bottom: 10px;
+}
+
+.searchButton {
+  width: 40px;
+  height: 36px;
+  border: 1px solid #00B4CC;
+  background: #00B4CC;
+  text-align: center;
+  color: #fff;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-size: 20px;
+}
+#limit {
+    width: 40px;
+    border-radius: 15%;
+    height: 36px;
+    border: 2px solid #00B4CC;
+    color: grey;
+}
+#clear {
+    height: 6rem;
+    border: 1px solid #00B4CC;
+    background: #00B4CC;
+    text-align: center;
+    color: #fff;
+    border-radius: 5px 5px 5px 0;
+    cursor: pointer;
+    font-size: 20px;
+    margin: 20px;
+}
+
+.carouselImage img {
+    height: 100px;
+  }
+  .scrollmenu {
+    overflow: auto;
+    white-space: nowrap;
+    display: flex;
+  }
+
+.term {
+    font-weight: bold;
+    color: black;
+}
+
+
+.responseField {
+    background-color: aquamarine;
+}
+
+@media only screen 
+  and (max-device-width: 600px) {
+    h1 {
+      font-size: 10rem;
+    }
+    .search  {
+      position: relative;
+      display: flex;
+      margin: auto;
+    
+      max-width: 600px;
+    
+    }
+    #input {
+        height: 10rem;
+        border: 2px solid #00B4CC;
+        width: 100%;
+    }
+    .searchTerm {
+      width: 80%;
+      border-right: none;
+      padding: 5px;
+      height: 40px;
+      border-radius: 5px 0 0 5px;
+      outline: none;
+      margin-bottom: 10px;
+    }
+    
+    .searchButton {
+      width: 10rem;
+      height: 10rem;
+      font-size: 6rem;
+    }
+    #limit {
+        width: 40px;
+        border-radius: 15%;
+        height: 10rem;
+        border: 2px solid #00B4CC;
+        color: grey;
+    }
+    #clear {
+        height: 6rem;
+        border: 1px solid #00B4CC;
+        background: #00B4CC;
+        text-align: center;
+        color: #fff;
+        border-radius: 5px 5px 5px 0;
+        cursor: pointer;
+        font-size: 20px;
+        margin: 20px;
+    }
+    
+    .carouselImage img {
+        height: 200px;
+      }
+  }

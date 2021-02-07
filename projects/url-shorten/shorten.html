@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>url shortener</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <style>
+        .pageTitle {
+            padding-top: 50px;
+            font-size: 50px;
+            font-weight: 500;
+            letter-spacing: 1.1px;
+            text-align: center;
+            margin: auto;
+            background-color: #ffffff;
+        }
+        body {
+            background-color: #0087de;
+            text-align: center;
+            }
+        #url {
+            width: 330px;
+            height: 37px;
+            border-radius: 3.2px;
+            border: solid 0.8px #1f233e;
+            display: block;
+            margin: auto;
+            text-align: center;
+        }
+        #responseField {
+            min-width: 191px;
+            min-height: 120px;
+            margin-top: 25px;
+            margin-left: 10em;
+            margin-right: 10em;
+            font-size: 16px;
+            letter-spacing: 0.2px;
+            text-align: center;
+            background-color: #ffffff;
+            overflow: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="text-center pageTitle"> Rebrandly Url Shortnener <img src="rebrandly.png" width="50" height="50">
+    </div>
+	<div class="container text-center">
+
+		<h1 class="text-white mx-auto p-3" id="prompt">Enter an url: </h1>
+
+	    	<form id="form" autocomplete="off">
+	        	<input type="text" id="url" name="url" placeholder="e.x. https://www.google.com/">
+	        	<button class="btn btn-light mt-2" id="shortenBtn">Shorten</button>
+	      	</form>
+
+	      	<div id="responseField">
+	      	</div>
+    </div>
+    <footer>
+        Disclaimer: only shortens if orignal url is greater than 18 characters :)
+    </footer>
+</body>
+
+<script src="shorten.js"></script>
+
+</html>
+

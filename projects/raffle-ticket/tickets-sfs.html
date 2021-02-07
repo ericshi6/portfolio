@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>mySFS Test</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style media="screen">
+  body {
+    font-family: 'Verdana','Arial','Helvetica', sans-serif;
+    color: #000000;
+    background-color: #FFFFFF;
+  }
+  table {
+    border: none;
+    border-spacing: 0px;
+  }
+  a,
+  a:visited,
+  a:active {
+    color: #000080;
+  }
+  .plus-button, .minus-button{
+    font-size:1.8em;
+    color:red;
+    opacity:0.7;
+  }
+  .plus-button:hover, .minus-button:hover{
+    opacity: 1;
+    cursor: pointer;
+  }
+</style>
+</head>
+
+<body>
+
+	<div class="container">
+		<h1 class="mt-4">mySFS Payment Gateway Test Form</h1>
+		<p class="bg-info font-weight-bold text-white">Direct POST a Payment </p>
+
+		<form  id="paymentForm" autocomplete="off">
+        	<h4 class= "text-info">Enter the amount of tickets you wish to purchase:</h4>
+      	<div class="container">
+		<table>
+			<tr>
+				<td colspan="2">
+			</tr>
+				<div class="ticketForm">
+					<tr>
+						<td><span>1 ticket for $5:</span></td>
+						<td>
+							<input id="1ticket" name="1 for $5" type="text" value="" min="0"  class="numTickets">
+							<i class="fa fa-plus-circle plus-button" id="1ticketup"></i>
+							<i class="fa fa-minus-circle minus-button" id="1ticketdown"></i>
+						</td>
+					</tr>
+					<tr>
+						<td><span>5 tickets for $20:</span></td>
+						<td>                    
+							<input id="5ticket" name="5 for $20" type="text" value="" min="0" class="numTickets">
+							<i class="fa fa-plus-circle plus-button" id="5ticketup"></i>
+							<i class="fa fa-minus-circle minus-button" id="5ticketdown"></i>
+
+						</td>
+					</tr>
+					<tr>
+						<td><span>15 tickets for $50:</span></td>
+						<td>
+							<input id="15ticket" name="15 for $50" type="text" value="" min="0"  class="numTickets">
+							<i class="fa fa-plus-circle plus-button"  id="15ticketup"></i>
+							<i class="fa fa-minus-circle minus-button" id="15ticketdown"></i>
+
+						</td>
+					</tr>
+					<tr>
+						<td><span>25 tickets for $80:</span></td>
+						<td>                    
+							<input id="25ticket" name="25 for $80" type="text" value="" min="0"  class="numTickets">
+							<i class="fa fa-plus-circle plus-button" id="25ticketup"></i>
+							<i class="fa fa-minus-circle minus-button" id="25ticketdown"></i>
+
+						</td>
+					</tr>
+					<tr>
+						<td><span>35 tickets for $100:</span></td>
+						<td>
+							<input id="35ticket" name="35 for $100" type="text" value="" min="0"  class="numTickets">
+							<i class="fa fa-plus-circle plus-button" id="35ticketup"></i>
+							<i class="fa fa-minus-circle minus-button" id="35ticketdown"></i>
+
+
+						</td>
+					</tr>
+				</div>
+
+					<tr>
+					<td colspan="2">
+					<hr>
+					<h4>Order Summary:</h4></td>
+				</tr>
+				<tr>
+					<td><span>Order Amount:</span></td>
+					<td>                    
+						<input id="amount" name="amount" class="displayonly" type="text" maxlength="" readonly="readonly" placeholder="Order Amount" value="[Amount]">
+					</td>
+				</tr>
+				<tr>
+					<td><span>Description: </span></td>
+					<td>
+					<input id="UMdescription" name="UMdescription" class="displayonly" type="text" maxlength=""  readonly="readonly" placeholder="Description" value="[Description]">
+				</td>
+				</tr>
+		</table>
+		        	<button class="btn btn-success" style="border-radius:15%;" id="paymentButton">Pay Here</button>	
+	</div>
+      	</form>
+
+      	<hr>
+      	<div id="pleaseWait" style="display:none"> 
+      		<p>Payment Response will appear below:</p>
+      	</div>
+		<div id="responseField" class="col-6"></div>
+	</div>
+
+	<script type="text/javascript">
+		document.getElementById("paymentButton").addEventListener("click", ()=>{
+			document.getElementById("pleaseWait").style.display='block'
+		})
+		/* from origin 'null' has been blocked by CORS policy: 
+Response to preflight request doesn't pass access control check: No 'Access-Control-Allow-Origin' header 
+is present on the requested resource. If an opaque response serves your needs, set the request's mode to 'no-cors' 
+to fetch the resource with CORS disabled.
+*/
+
+	var keyedsalecommand = '/v2/transactions/charge';
+	var cors ='https://cors-anywhere.herokuapp.com/'
+	var url='https://api.sandbox.mysfsgateway.com';
+	var endpoint = cors+url+keyedsalecommand;
+	//Basic Auth: u/pw : 09cYEZvMRhswUxchTL5ZDvS9tapDDD0c / 123456
+
+	var testSaleData = 
+	{
+	  "amount": 0.00,
+	  "amount_details": {
+	    "tax": 0,
+	    "surcharge": 0,
+	    "shipping": 0,
+	    "tip": 0,
+	    "discount": 0
+	  },
+	  "name": "test3",
+	  "transaction_details": {
+	    "description": "string",
+	    "clerk": "string",
+	    "terminal": "string",
+	    "client_ip": "192.168.0.1",
+	    "invoice_number": "string",
+	    "po_number": "string",
+	    "signature": ""
+	  },
+	  "billing_info": {
+	    "first_name": "Eric",
+	    "last_name": "Shi",
+	    "street": "string",
+	    "street2": "string",
+	    "state": "string",
+	    "city": "string",
+	    "zip": "string",
+	    "country": "string",
+	    "phone": "string"
+	  },
+	  "shipping_info": {
+	    "first_name": "Eric",
+	    "last_name": "Shi",
+	    "street": "string",
+	    "street2": "string",
+	    "state": "string",
+	    "city": "string",
+	    "zip": "string",
+	    "country": "string",
+	    "phone": "string"
+	  },
+	  "ignore_duplicates": false,
+	  "software": "string",
+	  "customer": {
+	    "send_receipt": false,
+	    "email": "user@example.com",
+	    "fax": "string",
+	    "identifier": "string"
+	  },
+	  "avs_address": "string",
+	  "avs_zip": "string",
+	  "expiry_month": 1,
+	  "expiry_year": 2022,
+	  "cvv2": "123",
+	  "card": "4111111111111111",
+	  "capture": true,
+	  "save_card": false
+	}
+
+
+	//const paymentInput = document.querySelector('#paymentInput');
+	const paymentButton = document.querySelector('#paymentButton');
+	const responseField = document.querySelector('#responseField');
+
+	const addFormData = ()=>{
+	  const amount =Number(document.getElementById('amount').value);
+	  //const card =document.getElementById('card').value;
+	  testSaleData.amount = amount;
+	}
+
+	const makePayment = () => {
+	  addFormData();
+	  //const paymentData=paymentInput.Value;
+	  const data= JSON.stringify(testSaleData);
+
+	  fetch(endpoint,
+	    {
+	      method:'POST',
+	      headers: {
+	        'Content-type': 'application/json',
+	        'Authorization': 'Basic UFd3MFdpQU5NSE85OTNtSFJIV0c3MHlhdWNQTUxuRlQ6MTIzNDU2'
+	        },
+	      body: data
+	    })
+	  .then(response=>{
+	     if (response.ok){
+	          return response.json();
+	      }
+	      throw new Error('Request failed!');
+	  }, (networkError) =>{
+	      console.log(networkError.message);
+	    })
+	    .then(jsonResponse => {
+	      renderResponse(jsonResponse);
+	    })
+
+	}
+
+	//event listeners
+	const displayPayment = (event) => {
+	  event.preventDefault();
+	  while(responseField.firstChild){
+	    responseField.removeChild(responseField.firstChild)
+	  }
+	  makePayment();
+	}
+	paymentButton.addEventListener('click', displayPayment);
+
+
+	//codecademy helper functions
+
+	// Manipulates responseField to render a formatted and appropriate message
+	const renderResponse = (res) => {
+	  // Displays either message depending on results
+	  var date= new Date();
+	  var weekDays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+	  var months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+	  console.log(res);
+	    responseField.innerHTML = 
+	    `<h3>Transaction Status: ${res.status}</h3>
+	    <p>Amount: $${res.auth_amount} </p>
+	    <p>Auth Code: ${res.auth_code} </p>
+	    <p>Date: ${weekDays[date.getDay()]}, ${months[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}</p>
+	    <p><small>*See console for full response.</small></p>`;
+	  
+	}
+
+	</script>
+		<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="crossorigin="anonymous"></script>
+	<script type="text/javascript">
+		$(document).ready(() => {
+			$('.numTickets').on('change', event =>{
+				updateOrder();
+			})
+
+			$('.plus-button').on('click', event=>{
+				amount=$(event.currentTarget).siblings('.numTickets').val();
+				amount++;
+				$(event.currentTarget).siblings('.numTickets').val(amount);
+				updateOrder();
+
+			})
+			$('.minus-button').on('click', event=>{
+				amount=$(event.currentTarget).siblings('.numTickets').val();
+				if (amount >=1){
+					amount--;
+					$(event.currentTarget).siblings('.numTickets').val(amount);
+				}
+				else{
+					console.log("NO NEGATIVE TICKETS!!!");
+				}
+				updateOrder();
+			})
+			
+			//updating amount + description
+			var updateOrder = () => {
+				console.log(tickets);
+				var total= 
+				Number($('#1ticket').val()*5)
+				+Number($('#5ticket').val()*20)
+				+Number($('#15ticket').val()*50)
+				+Number($('#25ticket').val()*80)
+				+Number($('#35ticket').val()*100);
+				$('#amount').val(total);
+
+				var tickets = 
+				Number($('#1ticket').val()*1)
+				+Number($('#5ticket').val()*5)
+				+Number($('#15ticket').val()*15)
+				+Number($('#25ticket').val()*25)
+				+Number($('#35ticket').val()*35)
+				+ ' tickets for $'
+				+total;
+				var description = tickets;
+				$('#UMdescription').val(description);
+			}
+
+		});
+	</script>
+
+</body>
+</html>

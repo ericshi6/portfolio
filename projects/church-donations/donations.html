@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		USAePay Church Donations
+	</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<style>
+	body {
+		background-color: #f1f1f1;
+	}
+	.paymentPage {
+		background-color: #ffffff;
+		margin-top: 69px;
+	}
+	</style>
+</head>
+<body>
+	<div class="container paymentPage">
+		<h1>USAePay Church Donation Form</h1>
+		<h4>Utilizing the USAePay API to send donations</h4><hr>
+		<div id="donationForm">
+			<p><strong>Please select the area of the Church you would like to send a contribution. </strong></p>
+	        <div id= "donation0" class= "donation">
+	        	<span>Which Department?</span>
+	        	<select id=donationOption0 class="donationOption">
+	                <option value="" selected disabled hidden>Choose here</option>
+	              </select>
+	              
+				<span>How Much? </span><input id= donationAmount0 type="text" name="amount"><hr>
+	        </div>
+	        <div id= "donation1" style="display:none" class= "donation">
+	        	<span>Which Department?</span>
+	        	<select id=donationOption1 class="donationOption">
+	                <option value="" selected disabled hidden>Choose here</option>
+	             </select>
+				<span>How Much? </span><input id= donationAmount1 type="text" name="amount"><hr>
+	        </div>
+	        <div id= "donation2" style="display:none" class= "donation">
+	        	<span>Which Department?</span>
+	        	<select id=donationOption2 class="donationOption">
+	                <option value="" selected disabled hidden>Choose here</option>
+	            </select>
+				<span>How Much? </span><input id= donationAmount2 type="text" name="amount"><hr>
+	        </div>
+			<div id= "donation3" style="display:none" class= "donation">
+	        	<span>Which Department?</span>
+	        	<select id=donationOption3 class="donationOption">
+	                <option value="" selected disabled hidden>Choose here</option>
+	            </select>
+				<span>How Much? </span><input id= donationAmount3 type="text" name="amount"><hr>
+	        </div>
+			<div id= "donation4" style="display:none" class= "donation">
+	        	<span>Which Department?</span>
+	        	<select id=donationOption4 class="donationOption">
+	                <option value="" selected disabled hidden>Choose here</option>
+	            </select>
+				<span>How Much? </span><input id= donationAmount4 type="text" name="amount"><hr>
+	        </div>
+			
+			
+
+			<div class="text-center">
+				<button class="donationBtn btn btn-primary center-block" style="margin: 10px;">I want to give to more departments</button>
+			</div>
+			<div class="text-center">
+				<button class="toggleForm btn btn-primary center-block" style="margin: 10px;">Toggle Payment Form</button>
+			</div>
+		</div>
+
+		<form id = "paymentForm" style="display:none" method = "POST" action="/donations">
+			<h1>Payment Form</h1>
+			<img src="https://s3-us-west-2.amazonaws.com/userdata123/www/imagefields/64956/64956231.png?_=1592513079790" style="width:15%;height:15%; display: block; margin-left: auto;">
+			<table class="table">
+				<tr>
+					<td>Amount:</td>
+					<td><input type="text" name="amount" id="amount" readonly></td>
+				</tr>
+				<tr>
+					<td>Description:</td>
+					<td><input type="text" name="description" id="description" readonly></td>
+				</tr>
+				<tr>
+					<td>Card #:</td>
+					<td><input type="text" name="cardNumber" id="cardNumber" value="4000100011112224"><a href="https://help.usaepay.info/developer/reference/testcards/" target="_blank"> *See Test Cards</a></td> 
+				</tr>			
+				<tr>
+					<td>Expiration Date:</td>
+					<td><input type="text" name="expirationDate" id="expirationDate" value="0331" ></td>
+				</tr>
+				<tr>
+					<td>CVC:</td>
+					<td><input type="text" name="cvc" id="cvc" value="111"></td>
+				</tr>
+				
+			</table>
+
+			<div class="text-center">
+				<button class="btn btn-primary center-block" type="submit" style="margin: 10px;">Pay</button>
+			</div>
+			
+		</form>
+	</div>
+</body>
+<script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+
+<script type="text/javascript">
+	$(document).ready(() => {
+		var count=0;
+		//adding fields on click
+		$('.toggleForm').on('click', ()=>{
+			$('#paymentForm').toggle();
+		})
+		$('.donationBtn').on('click', ()=>{
+			count++;
+			$('#donation'+count).show();
+			if(count >3){
+				$('.donationBtn').hide();
+			}
+		});
+		//updating amount + description
+		var updateAmount = () => {
+				var amount = 0;
+				for (j=0;j<5;j++){
+					if (isNaN(Number($('#donationAmount'+j).val()))){
+						continue;
+					}
+					amount += Number($('#donationAmount'+j).val());
+				}
+				return amount;
+		}
+		var updateDescription = ()=>{
+
+				var description = "";
+				for(i=0; i<5; i++){
+					if (isNaN(Number($('#donationAmount'+i).val()))){
+						continue;
+					}
+					if ($('#donationOption'+i).val() === null || $('#donationAmount'+i).val() === '' || $('#donationAmount'+i).val() === '0') {
+				        continue;
+				     }
+					description+= $('#donationOption'+i).val() + ' $' + $('#donationAmount'+i).val() + ', '
+				}
+				description = description.slice(0,-2);
+				return description;
+				
+		}
+
+		$('.donation').on('change', ()=>{
+			$('#amount').val(updateAmount);
+			$('#description').val(updateDescription);
+
+		})
+		//dropdown list
+		var options = ["Tithe", "Offering", "Bldg Fund", "Pastoral Gifts", "First Fruit","Super Sunday","Darius Crayton Ministries",
+			"Re-Directed Tithes","Re-Directed Offerings","Children's Ministry","Youth Ministry","Young Adults Ministry","Men's Ministry", 
+			"Women's Ministry","S.A.L.T Ministry","Outreach","Special Offering","Church Anniversary","Pastor's Anniversary","Other"];
+
+		for(var i = 0; i < options.length; i++) {
+			for(j=0; j<5; j++){
+				var opt = options[i];
+			    var el = document.createElement("option");
+			    el.textContent = opt;
+			    el.value = opt;
+			    $('#donationOption'+j).append(el);
+			}
+		};
+	});
+
+</script>
+</html>
