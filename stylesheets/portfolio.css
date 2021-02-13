@@ -233,13 +233,7 @@ h3 {
 /* Portrait and Landscape */
 @media only screen 
   and (max-device-width: 600px) {
-    body {
-      scroll-snap-type: y mandatory;
 
-    }
-    section {
-      scroll-snap-align: start;
-    }
     
     .site-header-right li a {
       font-size: 3em;
