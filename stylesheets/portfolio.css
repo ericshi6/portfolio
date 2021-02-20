@@ -12,36 +12,8 @@ section {
   color: #efca08;
 
 }
-.img-project {
-  opacity: 1;
-  transition: opacity 100ms ease;
-  border: 1px solid #ffffff;
 
-}
-.img-project:hover {
-  opacity: 0.8;
-  border: 1px solid #efca08;
-  color: #efca08;
-}
-.overlay {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 100%;
-  width: 100%;
-  opacity: 0;
-  transition: .5s ease;
-  background-color: #008CBA;
-}
-.project-container {
-  position: relative;
-  width: 100%;
-}
-.project-container .overlay:hover {
-  opacity: 0.5;
-}
+
 
 /* Site Navigation */
 .site-navigation {
@@ -51,16 +23,19 @@ section {
 }
 .site-header-left {
   display: inline-block;
+  text-decoration: none;
+
 }
 .site-header-left li {
   line-height: 0;
+  display: inline;
+
 }
 .site-header-right {
   display: inline-block;
   float: right;
 }
-.site-header-right li,
-.footer-right li {
+.site-header-right li{
   display: inline;
 }
 .site-header-right li a {
@@ -93,6 +68,7 @@ li a {
 .welcome h1 {
   color: #FFFFFF;
   font-size: 5rem;
+  font-weight: 340;
   margin: 1em 0 40px;
 }
 a:hover {
@@ -109,6 +85,11 @@ a:active {
   margin-bottom: 30px;
 }
 
+h2, h4 {
+  font-family: 'Open Sans', Helvetica, sans-serif;
+
+}
+
 button {
   border: none;
 }
@@ -122,7 +103,7 @@ button:hover {
   font-weight: 700;
   text-transform: uppercase;
   line-height: normal;
-  padding: 15px 15px;
+  padding: 15px 30px;
   text-align: center;
   text-decoration: none;
   transition: opacity 0.5s ease;
@@ -157,11 +138,7 @@ button:hover {
 .about li {
   font-style: italic;
 }
-h3 {
-  color: #f08700;
-  margin-top: 5px;
-  margin-bottom: 10px;
-}
+
 
 
 
@@ -187,26 +164,11 @@ h3 {
 }
 
 
-.img-project {
-  opacity: 1;
-  transition: opacity 100ms ease;
-  border: 1px solid #d3d3d3;
-
-}
-.img-project:hover {
-  opacity: 0.8;
-  border: 1px solid #efca08;
-  color: #efca08;
-}
-/*
-#projects{
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-}
-*/
 
 .contact {
   background-color: #00a6a6;
   min-height: 300px;
+  margin-top: 10%;
   margin-bottom: -15px;
 
 
