@@ -225,9 +225,10 @@ h3 {
 }
 
 /* Portrait and Landscape */
-@media only screen 
+/*@media only screen 
   and (max-device-width: 600px) {
-
+    */
+    @media only screen and (min-width: 900px) {}
     
     .site-header-right li a {
       font-size: 3em;
