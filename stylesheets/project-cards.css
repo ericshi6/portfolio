@@ -5,6 +5,10 @@
     margin-bottom: 9%;
 }
 
+.card-img-top:hover{
+  opacity: 0.8;
+}
+
 .extra-project-card {
     width: 99%;
     margin-bottom: 9%;
