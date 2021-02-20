@@ -1,0 +1,26 @@
+.project-card {
+    transition: 0.3s;
+    border-radius: 5px;
+}
+
+.extra-project-card {
+    width: 90%;
+    margin-bottom: 9%;
+}
+
+.project-page-header {
+    background-color: #00a6a6;
+    width: 100%;
+    height: 10%;
+    margin-top: -25px;
+}
+
+.button-project {
+    border: 1px solid #00a6a6;
+    box-sizing: border-box;
+    color: #00a6a6;
+    background-color: transparent;
+    text-transform: none;
+    padding: 15px 15px;
+    border-radius: 5px;
+  }

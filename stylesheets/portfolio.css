@@ -5,8 +5,6 @@ section {
   height: 100%;
 }
 
-
-
 }
 .img-gateway:hover {
   opacity: 0.8;
@@ -84,7 +82,10 @@ li a {
 .welcome {
   background-color: #00a6a6;
   min-height: 500px;
-  width: 100%
+  width: 100%;
+  margin-top: -25px;
+
+
 }
 .welcome-text {
   padding: 0 10px;
@@ -121,7 +122,7 @@ button:hover {
   font-weight: 700;
   text-transform: uppercase;
   line-height: normal;
-  padding: 15px 30px;
+  padding: 15px 15px;
   text-align: center;
   text-decoration: none;
   transition: opacity 0.5s ease;
@@ -166,8 +167,8 @@ h3 {
 
 .gateways {
   flex: 0 0 50%;                /* width of second flex item in main container */
-  display: flex;                /* nested flex container to arrange smaller items */
-  flex-wrap: wrap;              /* make container multi-line */
+  display: flex; 
+  flex-wrap: nowrap; 
 }
 .gateways .small-box {
   flex: 0 0 50%;                /* width of smaller items; two max per row */
@@ -206,6 +207,8 @@ h3 {
 .contact {
   background-color: #00a6a6;
   min-height: 300px;
+  margin-bottom: -15px;
+
 
 }
 .contact h1 {
@@ -236,3 +239,12 @@ h3 {
 }
 
 }
+@media only screen and (max-width: 600px) {
+    
+  .welcome {
+    background-color: #00a6a6;
+    min-height: 600px;
+    width: 100%
+  }
+  
+  }
