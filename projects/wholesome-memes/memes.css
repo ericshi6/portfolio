@@ -1,0 +1,54 @@
+.two-buttons {
+    position: relative;
+    top: 0;
+  left: 0;
+}
+.button-box {
+    position: relative;
+    top: -790px;
+    left: 1em;
+
+}
+.button2 {
+    position: relative;
+    left: 2em;
+    top: -1em;
+
+}
+.button {
+    font-family: 'Open Sans', Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+
+    line-height: normal;
+    padding: 15px 30px;
+    text-align: center;
+    text-decoration: none;
+    transition: opacity 0.5s ease;
+    border: 1px solid #00a6a6;
+    box-sizing: border-box;
+    color: #00a6a6;
+    background-color: #fff;
+}
+
+.button:hover {
+    cursor: pointer;
+    color: #efca08;
+    border: 1px solid #efca08;
+
+  }
+
+.button:active {
+    color: #efca08;
+  }
+
+.wholesomememe {
+    max-width: 600px;
+    max-height: 600px;
+
+}
+#footer {
+  position: static;
+
+}
