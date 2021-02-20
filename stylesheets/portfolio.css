@@ -228,77 +228,11 @@ h3 {
 /*@media only screen 
   and (max-device-width: 600px) {
     */
-    @media only screen and (min-width: 900px) {}
+@media only screen and (min-width: 900px) {
     
-    .site-header-right li a {
-      font-size: 3em;
-      margin-top: 2em;
-    }
-    .welcome {
-      height: 80vh;
-    }
+.gateways {
+  display: flex; 
+  flex-wrap: nowrap; 
+}
 
-    .welcome h1 {
-      font-size: 13rem;
-    }
-    .welcome p {
-      font-size: 4rem;
-    }
-    .button-welcome {
-      margin-top: 4em;
-      font-size: 36px;
-      border: 0.2rem solid white;
-    }
-
-    .about h1 {
-      font-size: 7rem;
-      padding-bottom: 1rem;
-    }
-    .about p,li{
-      font-size: 2.2rem;
-    }
-    .button-download{
-      margin-top: 2em;
-      font-size: 36px;
-      border: 0.2rem solid #00a6a6;
-    }
-    
-    #projects h1 {
-      font-size: 7rem;
-      margin-top: 1em;
-    }
-    h3 {
-      font-size: 4rem;
-    }
-    h4 {
-      font-size: 3.5rem;
-    }
-    h5 {
-      font-size: 3rem;
-      margin-bottom: 2rem;
-    }
-    #ecommerce h1 {
-      font-size: 7rem;
-      margin-top: 1em;
-    }
-
-    .gateways {
-      display: flex; 
-      flex-wrap: nowrap; 
-  }
-    footer {
-      height: 70vh;
-    }
-
-    .contact h1 {
-      padding-top: 3em;
-      font-size: 7rem;
-    }
-    footer p {
-      padding-top: 2em;
-      font-size: 3rem;
-    }
-    .button-contact {
-      font-size: 3rem;
-    }
 }
