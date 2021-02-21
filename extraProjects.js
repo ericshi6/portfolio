@@ -13,7 +13,7 @@ const mainProjects = new Vue ({
                 url: 'https://ericshi6.github.io/giphy-pokedex/',
                 title: 'Giphy Pokedex',
                 technology: 'HTML, CSS, Javascript, Vue.js, REST',
-                description: 'Utilizes Giphy and PokeAPI to display infomation about the current 898 Pokémon.',
+                description: 'Utilizes PokeAPI to display infomation about the current 898 Pokémon. Calls the Giphy API to present GIFs with each search.',
                 img: 'images/projects/pikachu.gif'
             },
             {
@@ -57,28 +57,28 @@ const extraProjects = new Vue({
                 url: 'https://ericshi6.github.io/EricBobaBlog/',
                 title: 'Boba Blog',
                 technology: 'HTML, CSS, Javascript, Vue.js, REST',
-                description: 'Additional project just for fun.',
+                description: 'A blog including my opinons on boba and a search feature to locate boba cafes based on location. Uses the Foursquare and OpenWeather API.',
                 img: 'images/projects/boba.gif'
             },
             {
                 url: 'https://ericshi6.github.io/giphy-pokedex/',
                 title: 'Giphy Pokedex',
                 technology: 'HTML, CSS, Javascript, Vue.js, REST',
-                description: 'Additional project just for fun.',
+                description: 'Utilizes PokeAPI to display infomation about the current 898 Pokémon. Calls the Giphy API to present GIFs with each search.',
                 img: 'images/projects/pikachu.gif'
             },
             {
                 url: 'https://ericshi6.github.io/wholesome-memes/',
-                title: 'r/Wholesome Memes Generator',
+                title: 'r/WholesomeMemes Generator',
                 technology: 'HTML, CSS, Javascript, Vue.js, REST',
-                description: 'Additional project just for fun.',
+                description: 'A fun project using a public meme API to randomly generate wholesome memes from Reddit r/wholesomememes.',
                 img: 'images/projects/wholesomememes.png'
             },
             {
                 url: 'https://ericshi6.github.io/student-payments/',
                 title: 'Student Payment Portal (Hosted Tokenization)',
                 technology: 'HTML, CSS, Javascript, REST',
-                description: 'Additional project just for fun.',
+                description: 'A payment page that uses NMI gateway Collect.js tokenization to accept credit cards online.',
                 img: 'images/projects/studentPortal.png'
             },
             {
