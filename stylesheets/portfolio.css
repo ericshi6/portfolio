@@ -10,7 +10,7 @@ section {
   opacity: 0.8;
   border: 1px solid #efca08;
   color: #efca08;
-
+  transition: opacity 0.5s ease;
 }
 
 

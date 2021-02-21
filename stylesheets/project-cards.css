@@ -3,11 +3,27 @@
     border-radius: 5px;
     width: 99%;
     margin-bottom: 9%;
+    overflow: hidden;
+
+}
+.img-box{
+  overflow: hidden;
+
+}
+.img-box img {
+  width: 100%;
+  transition: ease 1.5s;
+ }
+
+.card-img-top{
+  transition: ease 1.5s;
 }
 
 .card-img-top:hover{
-  opacity: 0.8;
-  width:100%
+  opacity: 0.7;
+  width:100%;
+  transform: scale(1.1);
+
 }
 
 .extra-project-card {
