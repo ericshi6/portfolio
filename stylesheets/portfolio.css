@@ -59,8 +59,6 @@ li a {
   min-height: 500px;
   width: 100%;
   margin-top: -25px;
-
-
 }
 .welcome-text {
   padding: 0 10px;
@@ -189,6 +187,12 @@ button:hover {
 .contact p a {
   color: #efca08;
   font-weight: bold;
+}
+.resume-link {
+  color: #00a6a6;
+}
+.resume-link:hover {
+  color: #efca08;
 }
 
 /* Portrait and Landscape */
