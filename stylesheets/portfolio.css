@@ -74,6 +74,11 @@ a:hover {
   transition: opacity 0.5s ease;
 
 }
+
+a {
+  color:#00a6a6;
+}
+
 a:active {
   color: #efca08;
 }

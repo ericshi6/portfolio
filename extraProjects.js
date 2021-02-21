@@ -1,3 +1,38 @@
+const mainProjects = new Vue ({
+    el: '#main-projects',
+    data: {
+        projects: [
+            {
+                url: 'https://ericshi6.github.io/EricBobaBlog/',
+                title: 'Boba Blog',
+                technology: 'HTML, CSS, Javascript, Vue.js, REST',
+                description: 'A blog including my opinons on boba and a search feature to locate boba cafes based on location. Uses the Foursquare and OpenWeather API.',
+                img: 'images/projects/boba.gif'
+            },
+            {
+                url: 'https://ericshi6.github.io/giphy-pokedex/',
+                title: 'Giphy Pokedex',
+                technology: 'HTML, CSS, Javascript, Vue.js, REST',
+                description: 'Utilizes Giphy and PokeAPI to display infomation about the current 898 Pokémon.',
+                img: 'images/projects/pikachu.gif'
+            },
+            {
+                url: 'https://ericshi6.github.io/wholesome-memes/',
+                title: 'r/WholesomeMemes Generator',
+                technology: 'HTML, CSS, Javascript, Vue.js, REST',
+                description: 'A fun project using a public meme API to randomly generate wholesome memes from Reddit r/wholesomememes.',
+                img: 'images/projects/wholesomememes.png'
+            },
+            {
+                url: 'https://ericshi6.github.io/student-payments/',
+                title: 'Student Payment Portal (Hosted Tokenization)',
+                technology: 'HTML, CSS, Javascript, REST',
+                description: 'A payment page that uses NMI gateway Collect.js tokenization to accept credit cards online.',
+                img: 'images/projects/studentPortal.png'
+            }
+        ]
+    }
+});
 
 
 const extraProjects = new Vue({
@@ -23,7 +58,7 @@ const extraProjects = new Vue({
                 title: 'Boba Blog',
                 technology: 'HTML, CSS, Javascript, Vue.js, REST',
                 description: 'Additional project just for fun.',
-                img: 'images/projects/pikachu.gif'
+                img: 'images/projects/boba.gif'
             },
             {
                 url: 'https://ericshi6.github.io/giphy-pokedex/',

@@ -9,6 +9,7 @@
 	<link rel='stylesheet' type='text/css' href='stylesheets/project-cards.css'>
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css">
   	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/v4-shims.css">
+	<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
 	<style type="text/css">
 		@import url(https://fonts.googleapis.com/css?family=Open+Sans);
 		@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css);
@@ -82,66 +83,25 @@
 	<section id="projects">
 		<div class="container">
 		<h2 class="text-left">Projects</h2><br>
-				<div class="row">
-					<div class="col-lg-6"> 
+			<div class="row" id="main-projects">
+				<div class="col-lg-6" v-for="project in projects">
+					<div class="card project-card">
 
-						<div class="card project-card">
-							<a class="img-box" href="https://ericshi6.github.io/EricBobaBlog/" target="_blank">
-								<img class="card-img-top img-project"src="images/projects/pikachu.gif" class="img-responsive img-project" style="width:100%;" alt="Image" id="giphyapi">
-							</a>
-							<div class="card-body">
-								<h5 class="card-title">Boba Blog</h5>  
-								<p class="card-text">A blog including my opinons on boba and a search feature to locate boba cafes based on location. Uses the Foursquare and OpenWeather API. Built in Vue.js. </p>
-								<a href="https://ericshi6.github.io/EricBobaBlog/" target="_blank" class="button button-project">See Project <i class="fas fa-external-link-alt"></i></a>
-
-							</div>
-						</div>  
-					</div>
-					
-				  
-					<div class="col-lg-6"> 
-						<div class="card project-card">
-							<a class="img-box" href="https://ericshi6.github.io/giphy-pokedex/" target="_blank">
-								<img class="card-img-top img-project"src="images/projects/pikachu.gif" class="img-responsive img-project" style="width:100%;" alt="Image" id="giphyapi">
-							</a>
-							<div class="card-body">
-								<h5 class="card-title">Giphy Pokédex</h5>  
-								<p class="card-text">Utilizes Giphy and PokeAPI to display infomation about the current 898 Pokémon. Uses the Vue.js library. </p>
-								<a href="https://ericshi6.github.io/giphy-pokedex/" target="_blank" class="button button-project">See Project <i class="fas fa-external-link-alt"></i></a>
-
-							</div>
-						</div>  
-					</div>	 
-					<div class="col-lg-6"> 
-						<div class="card project-card">
-							<a class="img-box" href="https://ericshi6.github.io/wholesome-memes" target="_blank">
-								<img class="card-img-top img-project"src="images/projects/wholesomememes.png" class="img-responsive img-project" style="width:100%;" alt="Image" id="giphyapi">
-							</a>
-							<div class="card-body">
-								<h5 class="card-title">r/WholesomeMemes</h5>  
-								<p class="card-text">A fun project using a public meme API to randomly generate wholesome memes from Reddit r/wholesomememes.</p>
-								<a href="https://ericshi6.github.io/wholesome-memes" target="_blank" class="button button-project">See Project <i class="fas fa-external-link-alt"></i></a>
-
-							</div>
+						<a :href="project.url" target="_blank" class="img-box">
+							<img class="card-img-top img-project" alt="Image" v-bind:src=project.img>
+						</a>
+						<div class="card-body">
+							<h5 class="card-title">{{project.title}}</h5>  
+							<p class="card-text">{{project.technology}}</p>
+							<p> {{project.description}}</p>
+							<a :href="project.url" target="_blank" class="button button-project">See Project <i class="fas fa-external-link-alt"></i></a>
 						</div>
-						  
-					</div>   
-					
-					<div class="col-lg-6">
-						<div class="card project-card">
-							<a class="img-box" href="https://ericshi6.github.io/student-payments/" target="_blank">
-								<img class="card-img-top img-project"src="images/projects/studentPortal.png" class="img-responsive img-project" style="width:100%;" alt="Image" id="giphyapi">
-							</a>
-							<div class="card-body">
-								<h5 class="card-title">Student Payment Portal (Hosted Tokenization)</h5>  
-								<p class="card-text">A payment page that uses NMI's Collect.js tokenization to accept credit cards online.</p>
-								<a href="https://ericshi6.github.io/student-payments/" target="_blank" class="button button-project">See Project <i class="fas fa-external-link-alt"></i></a>
-
-							</div>
-						</div>
-						
 					</div>
 				</div>
+			</div>
+			
+				<script src="extraProjects.js" ></script>
+
 				<br>
 				<h5 class="text-right resume-link"><a class="btn-large" href="./additional-projects.html"target="_blank">...See more projects</a></h5>
 
