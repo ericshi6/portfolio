@@ -7,6 +7,7 @@
 
 .card-img-top:hover{
   opacity: 0.8;
+  width:100%
 }
 
 .extra-project-card {
