@@ -1,9 +1,11 @@
+
 .project-card {
     transition: 0.3s;
     border-radius: 5px;
     width: 99%;
     margin-bottom: 9%;
     overflow: hidden;
+    background-color: transparent;
 
 }
 .img-box{
@@ -20,15 +22,19 @@
 }
 
 .card-img-top:hover{
-  opacity: 0.1;
   width:100%;
   transform: scale(1.08);
-
 }
 
+.extra-projects-page{
+  color: #e6f1ff;
+  background-color: #0a192f;
+}
 .extra-project-card {
     width: 99%;
     margin-bottom: 9%;
+    background-color: transparent;
+
 }
 
 .project-page-header {
@@ -55,8 +61,8 @@
   
   }
   .img-project:hover {
-    opacity: 0.8;
-    color: #efca08;
+    opacity: 0.75;
+    background-color: #efca08;
   }
 
  
